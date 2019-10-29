@@ -17,8 +17,8 @@ it(`App is correctly works with click`, () => {
     onClick={clickHandler}
   />);
 
-  const filmTitle = app.find(`.small-movie-card__link`);
-  filmTitle.forEach((title) => {
+  const filmTitles = app.find(`.small-movie-card__link`);
+  filmTitles.forEach((title) => {
     title.simulate(`click`, {preventDefault});
   });
   expect(clickHandler).toHaveBeenCalledTimes(filmsNames.length);
