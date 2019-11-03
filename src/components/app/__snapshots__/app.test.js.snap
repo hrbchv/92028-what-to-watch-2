@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders App component is correctly 1`] = `
+exports[`App should renders correctly 1`] = `
 <div>
   <section
     className="movie-card"
@@ -189,6 +189,7 @@ exports[`renders App component is correctly 1`] = `
       >
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -207,12 +208,13 @@ exports[`renders App component is correctly 1`] = `
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              East Lynne	Fox
+              Fantastic Beasts: The Crimes of Grindelwald
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -220,7 +222,7 @@ exports[`renders App component is correctly 1`] = `
             <img
               alt="Fantastic Beasts: The Crimes of Grindelwald"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="img/bohemian-rhapsody.jpg"
               width="280"
             />
           </div>
@@ -231,12 +233,13 @@ exports[`renders App component is correctly 1`] = `
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              The Front
+              Bohemian Rhapsody
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -244,7 +247,7 @@ exports[`renders App component is correctly 1`] = `
             <img
               alt="Fantastic Beasts: The Crimes of Grindelwald"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="img/macbeth.jpg"
               width="280"
             />
           </div>
@@ -255,12 +258,13 @@ exports[`renders App component is correctly 1`] = `
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Page
+              Macbeth
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -268,7 +272,7 @@ exports[`renders App component is correctly 1`] = `
             <img
               alt="Fantastic Beasts: The Crimes of Grindelwald"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="img/aviator.jpg"
               width="280"
             />
           </div>
@@ -279,12 +283,13 @@ exports[`renders App component is correctly 1`] = `
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              The Caddo
+              Aviator
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
         >
           <div
             className="small-movie-card__image"
@@ -303,31 +308,7 @@ exports[`renders App component is correctly 1`] = `
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Company
-            </a>
-          </h3>
-        </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <img
-              alt="Fantastic Beasts: The Crimes of Grindelwald"
-              height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
-            />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="movie-page.html"
-            >
-              Skippy
+              Some name
             </a>
           </h3>
         </article>

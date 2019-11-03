@@ -1,19 +1,19 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.jsx";
+import MainPage from "./main-page.jsx";
 import films from "../../mocks/films";
 
 const filmsGenres = [`Romance`, `Sci-Fi`, `Thrillers`];
 
-describe(`App`, () => {
+describe(`MainPage`, () => {
   it(`should renders correctly`, () => {
+
     const tree = renderer
-      .create(<App
+      .create(<MainPage
         films={films}
-        genres={filmsGenres}
-      />)
-      .toJSON();
+        genres={filmsGenres}/>
+      ).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });
-
