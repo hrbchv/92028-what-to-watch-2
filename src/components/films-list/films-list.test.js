@@ -1,19 +1,16 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.jsx";
+import FilmsList from "./films-list.jsx";
 import films from "../../mocks/films";
 
-const filmsGenres = [`Romance`, `Sci-Fi`, `Thrillers`];
-
-describe(`App`, () => {
+describe(`FilmsList`, () => {
   it(`should renders correctly`, () => {
+
     const tree = renderer
-      .create(<App
-        films={films}
-        genres={filmsGenres}
-      />)
-      .toJSON();
+      .create(<FilmsList
+        filmsCards={films}/>
+      ).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });
-
