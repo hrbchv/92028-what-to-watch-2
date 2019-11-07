@@ -1,26 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
+import VideoPlayer from "../videoplayer/videoplayer.jsx";
 
 const SmallMovieCard = (props) => {
-  const {film, onEnter, index} = props;
+  const {movie, index, activeMovieIndex, onEnter, onLeave} = props;
 
-  return <article onMouseEnter={() => onEnter(index)} className="small-movie-card catalog__movies-card">
+  return <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={() => onEnter(index)}
+    onMouseLeave={() => onLeave()}>
     <div className="small-movie-card__image">
-      <img src={film.imgSrc} alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
+      <VideoPlayer
+        imgSrc={movie.imgSrc}
+        videoSrc={movie.videoSrc}
+        index={index}
+        activeMovieIndex={activeMovieIndex}
+      />
     </div>
     <h3 className="small-movie-card__title">
-      <a className="small-movie-card__link" href="movie-page.html">{film.name}</a>
+      <a className="small-movie-card__link" href="movie-page.html">{movie.name}</a>
     </h3>
   </article>;
 };
 
 SmallMovieCard.propTypes = {
-  film: PropTypes.shape({
+  movie: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired
+    imgSrc: PropTypes.string.isRequired,
+    videoSrc: PropTypes.string.isRequired
   }).isRequired,
+  activeMovieIndex: PropTypes.number.isRequired,
   index: PropTypes.number.isRequired,
-  onEnter: PropTypes.func
+  onEnter: PropTypes.func,
+  onLeave: PropTypes.func
 };
 
 export default SmallMovieCard;

@@ -7,14 +7,16 @@ exports[`FilmsList should renders correctly 1`] = `
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Fantastic Beasts: The Crimes of Grindelwald"
-        height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+      <video
+        muted={true}
+        poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        preload="true"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>
@@ -32,14 +34,16 @@ exports[`FilmsList should renders correctly 1`] = `
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Fantastic Beasts: The Crimes of Grindelwald"
-        height="175"
-        src="img/bohemian-rhapsody.jpg"
+      <video
+        muted={true}
+        poster="img/bohemian-rhapsody.jpg"
+        preload="true"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>
@@ -57,14 +61,16 @@ exports[`FilmsList should renders correctly 1`] = `
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Fantastic Beasts: The Crimes of Grindelwald"
-        height="175"
-        src="img/macbeth.jpg"
+      <video
+        muted={true}
+        poster="img/macbeth.jpg"
+        preload="true"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>
@@ -82,14 +88,16 @@ exports[`FilmsList should renders correctly 1`] = `
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Fantastic Beasts: The Crimes of Grindelwald"
-        height="175"
-        src="img/aviator.jpg"
+      <video
+        muted={true}
+        poster="img/aviator.jpg"
+        preload="true"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>
@@ -107,14 +115,16 @@ exports[`FilmsList should renders correctly 1`] = `
   <article
     className="small-movie-card catalog__movies-card"
     onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Fantastic Beasts: The Crimes of Grindelwald"
-        height="175"
-        src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+      <video
+        muted={true}
+        poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+        preload="true"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>

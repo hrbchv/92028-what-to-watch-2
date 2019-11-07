@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import SmallMovieCard from "./../small-movie-card/small-movie-card.jsx";
 
+const DEFAULT_MOVIE_INDEX = -1;
+
 class FilmsList extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      activeFilm: null
+      activeMovieIndex: DEFAULT_MOVIE_INDEX
     };
   }
 
@@ -17,14 +19,20 @@ class FilmsList extends React.PureComponent {
     } = this.props;
 
     return <div className="catalog__movies-list">
-      {filmsCards.map((film, index) => {
+      {filmsCards.map((movie, index) => {
         return <SmallMovieCard
-          key={`film-${index}`}
-          film={film}
+          activeMovieIndex={this.state.activeMovieIndex}
+          key={`movie-${index}`}
+          movie={movie}
           index={index}
+          onLeave={() => {
+            this.setState({
+              activeMovieIndex: DEFAULT_MOVIE_INDEX
+            });
+          }}
           onEnter={(indexOfFilm) => {
             this.setState({
-              activeFilm: indexOfFilm
+              activeMovieIndex: indexOfFilm
             });
           }}/>;
       })}

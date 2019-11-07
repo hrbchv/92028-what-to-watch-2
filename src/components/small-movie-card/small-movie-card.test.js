@@ -6,12 +6,14 @@ import films from "../../mocks/films";
 describe(`SmallMovieCard`, () => {
   it(`should renders correctly`, () => {
     const index = 2;
-    const film = films[index];
+    const activeMovieIndex = 1;
+    const movie = films[index];
 
     const tree = renderer
       .create(<SmallMovieCard
-        film={film}
-        index={index}/>
+        movie={movie}
+        index={index}
+        activeMovieIndex={activeMovieIndex}/>
       ).toJSON();
 
     expect(tree).toMatchSnapshot();
