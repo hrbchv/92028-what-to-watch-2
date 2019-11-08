@@ -3,6 +3,7 @@
 exports[`SmallMovieCard should renders correctly 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -13,8 +14,6 @@ exports[`SmallMovieCard should renders correctly 1`] = `
       muted={true}
       poster="img/macbeth.jpg"
       preload="true"
-      src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
-      width="280"
     />
   </div>
   <h3

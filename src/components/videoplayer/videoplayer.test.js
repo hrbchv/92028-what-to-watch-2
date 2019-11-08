@@ -5,7 +5,7 @@ import VideoPlayer from "./videoplayer.jsx";
 const imgSrc = `img/bohemian-rhapsody.jpg`;
 const videoSrc = `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`;
 const index = 3;
-const activeMovieIndex = -1;
+const isPlay = true;
 
 describe(`FilmsList`, () => {
   it(`should renders correctly`, () => {
@@ -15,7 +15,7 @@ describe(`FilmsList`, () => {
         imgSrc={imgSrc}
         videoSrc={videoSrc}
         index={index}
-        activeMovieIndex={activeMovieIndex}/>
+        isPlay={isPlay}/>
       ).toJSON();
 
     expect(tree).toMatchSnapshot();

@@ -15,16 +15,16 @@ const movie = {
 const index = 1;
 const activeMovieIndex = 1;
 
-it(`App is correctly works with click`, () => {
-  const enterHandler = jest.fn();
-  const app = shallow(<SmallMovieCard
+it(`Small movie card is correctly works with click`, () => {
+  const clickHandler = jest.fn();
+  const movieCardComponent = shallow(<SmallMovieCard
     movie={movie}
     index={index}
     activeMovieIndex={activeMovieIndex}
-    onEnter={enterHandler}
+    onClick={clickHandler}
   />);
 
-  const card = app.find(`.small-movie-card`);
-  card.simulate(`mouseenter`, {preventDefault() {}});
-  expect(enterHandler).toHaveBeenCalledWith(index);
+  const card = movieCardComponent.find(`.small-movie-card`);
+  card.simulate(`click`, {preventDefault() {}});
+  expect(clickHandler).toHaveBeenCalledWith(index);
 });

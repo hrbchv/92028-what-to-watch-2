@@ -6,14 +6,14 @@ import films from "../../mocks/films";
 describe(`SmallMovieCard`, () => {
   it(`should renders correctly`, () => {
     const index = 2;
-    const activeMovieIndex = 1;
     const movie = films[index];
+    const clickHandler = jest.fn();
 
     const tree = renderer
       .create(<SmallMovieCard
         movie={movie}
         index={index}
-        activeMovieIndex={activeMovieIndex}/>
+        onClick={clickHandler}/>
       ).toJSON();
 
     expect(tree).toMatchSnapshot();

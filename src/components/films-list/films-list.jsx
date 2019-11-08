@@ -11,6 +11,13 @@ class FilmsList extends React.PureComponent {
     this.state = {
       activeMovieIndex: DEFAULT_MOVIE_INDEX
     };
+    this._activeCardHandler = this._activeCardHandler.bind(this);
+  }
+
+  _activeCardHandler(indexOfActiveFilm = null) {
+    this.setState({
+      activeMovieIndex: indexOfActiveFilm
+    });
   }
 
   render() {
@@ -21,20 +28,10 @@ class FilmsList extends React.PureComponent {
     return <div className="catalog__movies-list">
       {filmsCards.map((movie, index) => {
         return <SmallMovieCard
-          activeMovieIndex={this.state.activeMovieIndex}
           key={`movie-${index}`}
           movie={movie}
           index={index}
-          onLeave={() => {
-            this.setState({
-              activeMovieIndex: DEFAULT_MOVIE_INDEX
-            });
-          }}
-          onEnter={(indexOfFilm) => {
-            this.setState({
-              activeMovieIndex: indexOfFilm
-            });
-          }}/>;
+          onClick={this._activeCardHandler}/>;
       })}
     </div>;
   }
