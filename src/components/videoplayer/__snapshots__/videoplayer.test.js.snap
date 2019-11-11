@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmsList should renders correctly 1`] = `
+<video
+  muted={true}
+  poster="img/bohemian-rhapsody.jpg"
+  preload="true"
+/>
+`;
