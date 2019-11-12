@@ -7,7 +7,6 @@ const filmsGenres = [`Romance`, `Sci-Fi`, `Thrillers`];
 
 describe(`MainPage`, () => {
   it(`should renders correctly`, () => {
-
     const tree = renderer
       .create(<MainPage
         films={films}

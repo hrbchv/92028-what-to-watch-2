@@ -1,17 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
 import App from "./components/app/app.jsx";
-import films from "./mocks/films.js";
+import {reducer} from "./reducer";
 
-const filmsGenres = [`All genres`, `Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`];
-
+const store = createStore(reducer);
 const init = () => {
-  ReactDOM.render(
-      <App
-        films={films}
-        genres={filmsGenres}
-      />,
-      document.querySelector(`#root`)
+  ReactDOM.render(<Provider store={store}>
+    <App/></Provider>,
+  document.querySelector(`#root`)
   );
 };
 

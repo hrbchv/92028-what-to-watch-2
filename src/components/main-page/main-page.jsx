@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FilmsList from "../films-list/films-list.jsx";
+import Genres from "../genres/genres.jsx";
 
 const MainPage = (props) => {
   const {films, genres} = props;
@@ -64,13 +65,8 @@ const MainPage = (props) => {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <ul className="catalog__genres-list">
-          {genres.map((genre, index) => {
-            return <li key={genre + index} className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">{genre}</a>
-            </li>;
-          })}
-        </ul>
+        <Genres
+          genres={genres}/>
 
         <FilmsList
           filmsCards={films}/>

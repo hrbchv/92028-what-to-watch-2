@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import MainPage from "../main-page/main-page.jsx";
 
@@ -20,4 +21,13 @@ App.propTypes = {
   genres: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    films: state.currentListOfFilms,
+    genres: state.genres,
+    currentGenre: state.currentGenre
+  };
+};
+
+export {App};
+export default connect(mapStateToProps)(App);
