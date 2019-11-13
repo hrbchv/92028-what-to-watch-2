@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {ActionCreators} from "../../reducer";
+import {ActionCreators} from "../../reducer/reducer";
 
 class Genres extends React.PureComponent {
   constructor(props) {
@@ -16,7 +16,7 @@ class Genres extends React.PureComponent {
 
   _onChangeGenreClick(event) {
     event.preventDefault();
-    this.state.onChangeGenreClick(event.target.text, this.props.films);
+    this.state.onChangeGenreClick(event.target.text);
   }
 
   render() {
@@ -36,8 +36,7 @@ class Genres extends React.PureComponent {
 Genres.propTypes = {
   genres: PropTypes.array.isRequired,
   currentGenre: PropTypes.string.isRequired,
-  onChangeGenreClick: PropTypes.func.isRequired,
-  films: PropTypes.array.isRequired
+  onChangeGenreClick: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, state, {
@@ -46,9 +45,9 @@ const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, state, 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChangeGenreClick: (value, films) => {
+    onChangeGenreClick: (value) => {
       dispatch(ActionCreators.changeGenre(value));
-      dispatch(ActionCreators.getFilmsList(films, value));
+      dispatch(ActionCreators.getFilmsList());
     }
   };
 };
