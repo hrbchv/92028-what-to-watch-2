@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import FilmsList from "../films-list/films-list.jsx";
 import Genres from "../genres/genres.jsx";
 
-const MainPage = (props) => {
-  const {genres} = props;
+const MainPage = () => {
   return <div>
     <section className="movie-card">
       <div className="movie-card__bg">
@@ -65,8 +64,7 @@ const MainPage = (props) => {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <Genres
-          genres={genres}/>
+        <Genres/>
 
         <FilmsList/>
 

@@ -40,7 +40,8 @@ Genres.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, state, {
-  currentGenre: state.currentGenre
+  currentGenre: state.currentGenre,
+  genres: state.genres
 });
 
 const mapDispatchToProps = (dispatch) => {
