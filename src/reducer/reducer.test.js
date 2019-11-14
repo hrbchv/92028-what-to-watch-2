@@ -1,5 +1,4 @@
-import {reducer, getFilteredFilms} from "./reducer";
-import {films as allFilms} from "../mocks/films";
+import {reducer} from "./reducer";
 
 describe(`Business logic is correct`, () => {
   it(`Reducer should change genre correctly`, () => {
@@ -10,20 +9,6 @@ describe(`Business logic is correct`, () => {
       payload: `Dramas`,
     })).toEqual({
       currentGenre: `Dramas`,
-    });
-  });
-
-  it(`Reducer should filtered films correctly`, () => {
-    expect(reducer({
-      currentGenre: `Romance`,
-      currentListOfFilms: allFilms,
-      films: allFilms
-    }, {
-      type: `GET_FILMS_LIST`
-    })).toEqual({
-      currentGenre: `Romance`,
-      currentListOfFilms: getFilteredFilms(allFilms, `Romance`),
-      films: allFilms
     });
   });
 });

@@ -47,7 +47,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onChangeGenreClick: (value) => {
       dispatch(ActionCreators.changeGenre(value));
-      dispatch(ActionCreators.getFilmsList());
     }
   };
 };

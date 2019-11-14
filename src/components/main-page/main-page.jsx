@@ -4,7 +4,7 @@ import FilmsList from "../films-list/films-list.jsx";
 import Genres from "../genres/genres.jsx";
 
 const MainPage = (props) => {
-  const {films, genres} = props;
+  const {genres} = props;
   return <div>
     <section className="movie-card">
       <div className="movie-card__bg">
@@ -68,8 +68,7 @@ const MainPage = (props) => {
         <Genres
           genres={genres}/>
 
-        <FilmsList
-          filmsCards={films}/>
+        <FilmsList/>
 
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>
@@ -94,12 +93,6 @@ const MainPage = (props) => {
 };
 
 MainPage.propTypes = {
-  films: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired
-  })).isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
