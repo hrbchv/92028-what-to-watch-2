@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SmallMovieCard from "./../small-movie-card/small-movie-card.jsx";
+import {connect} from "react-redux";
+import {getFilteredFilms} from "../../reducer/reducer";
 
 const DEFAULT_MOVIE_INDEX = -1;
 
@@ -46,4 +48,13 @@ FilmsList.propTypes = {
   })).isRequired
 };
 
-export default FilmsList;
+const mapStateToProps = (state) => {
+  const {currentGenre, films} = state;
+  const filmsCards = getFilteredFilms(films, currentGenre);
+  return {
+    filmsCards
+  };
+};
+
+export {FilmsList};
+export default connect(mapStateToProps)(FilmsList);

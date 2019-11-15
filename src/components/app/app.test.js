@@ -1,18 +1,13 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import Enzyme, {shallow} from "enzyme";
 import App from "./app.jsx";
-import films from "../../mocks/films";
+import Adapter from "enzyme-adapter-react-16/build/index";
 
-const filmsGenres = [`Romance`, `Sci-Fi`, `Thrillers`];
+Enzyme.configure({adapter: new Adapter()});
 
 describe(`App`, () => {
   it(`should renders correctly`, () => {
-    const tree = renderer
-      .create(<App
-        films={films}
-        genres={filmsGenres}
-      />)
-      .toJSON();
+    const tree = shallow(<App/>);
     expect(tree).toMatchSnapshot();
   });
 });

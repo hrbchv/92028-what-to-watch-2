@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import FilmsList from "../films-list/films-list.jsx";
+import Genres from "../genres/genres.jsx";
 
-const MainPage = (props) => {
-  const {films, genres} = props;
+const MainPage = () => {
   return <div>
     <section className="movie-card">
       <div className="movie-card__bg">
@@ -64,16 +63,9 @@ const MainPage = (props) => {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <ul className="catalog__genres-list">
-          {genres.map((genre, index) => {
-            return <li key={genre + index} className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">{genre}</a>
-            </li>;
-          })}
-        </ul>
+        <Genres/>
 
-        <FilmsList
-          filmsCards={films}/>
+        <FilmsList/>
 
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>
@@ -95,16 +87,6 @@ const MainPage = (props) => {
       </footer>
     </div>
   </div>;
-};
-
-MainPage.propTypes = {
-  films: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired
-  })).isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default MainPage;
