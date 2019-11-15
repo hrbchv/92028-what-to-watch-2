@@ -39,7 +39,7 @@ Genres.propTypes = {
   onChangeGenreClick: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, state, {
+const mapStateToProps = (state) => ({
   currentGenre: state.currentGenre,
   genres: state.genres
 });

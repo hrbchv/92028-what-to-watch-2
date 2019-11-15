@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import FilmsList from "../films-list/films-list.jsx";
 import Genres from "../genres/genres.jsx";
 
@@ -88,10 +87,6 @@ const MainPage = () => {
       </footer>
     </div>
   </div>;
-};
-
-MainPage.propTypes = {
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default MainPage;
