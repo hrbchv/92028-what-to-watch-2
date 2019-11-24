@@ -44,8 +44,8 @@ class SmallMovieCard extends React.PureComponent {
       onClick={() => onClick(index)}>
       <div className="small-movie-card__image">
         <VideoPlayer
-          imgSrc={movie.imgSrc}
-          videoSrc={movie.videoSrc}
+          imgSrc={movie.previewImage}
+          videoSrc={movie.previewVideoLink}
           index={index}
           isPlay={this.state.isPlay}
         />
@@ -60,8 +60,8 @@ class SmallMovieCard extends React.PureComponent {
 SmallMovieCard.propTypes = {
   movie: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
-    videoSrc: PropTypes.string.isRequired
+    previewImage: PropTypes.string.isRequired,
+    previewVideoLink: PropTypes.string.isRequired
   }).isRequired,
   onClick: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {ActionCreators} from "../../reducer/reducer";
+import {ActionCreator} from "../../reducer/data/data";
 
 class Genres extends React.PureComponent {
   constructor(props) {
@@ -39,15 +39,18 @@ Genres.propTypes = {
   onChangeGenreClick: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => ({
-  currentGenre: state.currentGenre,
-  genres: state.genres
-});
+const mapStateToProps = (state) => {
+  const storeState = state.DATA;
+  return {
+    currentGenre: storeState.currentGenre,
+    genres: storeState.genres
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onChangeGenreClick: (value) => {
-      dispatch(ActionCreators.changeGenre(value));
+      dispatch(ActionCreator.changeGenre(value));
     }
   };
 };

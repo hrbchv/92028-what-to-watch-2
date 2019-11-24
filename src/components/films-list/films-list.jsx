@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import SmallMovieCard from "./../small-movie-card/small-movie-card.jsx";
 import {connect} from "react-redux";
-import {getFilteredFilms} from "../../reducer/reducer";
+import getFilteredFilms from "../../utils/get-filtered-list";
 
 const DEFAULT_MOVIE_INDEX = -1;
 
@@ -27,7 +27,7 @@ class FilmsList extends React.PureComponent {
       filmsCards
     } = this.props;
 
-    return <div className="catalog__movies-list">
+    return filmsCards ? <div className="catalog__movies-list">
       {filmsCards.map((movie, index) => {
         return <SmallMovieCard
           key={`movie-${index}`}
@@ -35,21 +35,21 @@ class FilmsList extends React.PureComponent {
           index={index}
           onClick={this._activeCardHandler}/>;
       })}
-    </div>;
+    </div> : null;
   }
 }
 
 FilmsList.propTypes = {
   filmsCards: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired
+    previewImage: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired
   })).isRequired
 };
 
 const mapStateToProps = (state) => {
-  const {currentGenre, films} = state;
+  const storeState = state.DATA;
+  const {currentGenre, films} = storeState;
   const filmsCards = getFilteredFilms(films, currentGenre);
   return {
     filmsCards

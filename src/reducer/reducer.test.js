@@ -1,4 +1,4 @@
-import {reducer} from "./reducer";
+import {reducer} from "./index";
 
 describe(`Business logic is correct`, () => {
   it(`Reducer should change genre correctly`, () => {
